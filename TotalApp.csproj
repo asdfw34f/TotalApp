@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\T.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Assets\T.png" />
+  </ItemGroup>
+
+</Project>

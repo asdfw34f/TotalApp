@@ -1,0 +1,51 @@
+﻿<Window
+    x:Class="TotalApp.MVVM.View.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TotalApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:st="clr-namespace:TotalApp.Resource.Dict"
+    Title="TotalMenu"
+    Width="800"
+    Height="450"
+    Background="#079992"
+    WindowState="Maximized"
+    mc:Ignorable="d">
+
+    <Window.Resources>
+        <ResourceDictionary Source="/Resource/Dict.xaml" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="#38ada9">
+
+            <DockPanel>
+                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
+                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
+            </DockPanel>
+
+            <DockPanel>
+                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
+                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
+            </DockPanel>
+
+        </StackPanel>
+
+        <Frame
+            x:Name="Frame"
+            Grid.Column="1"
+            Grid.ColumnSpan="2" />
+
+    </Grid>
+</Window>
