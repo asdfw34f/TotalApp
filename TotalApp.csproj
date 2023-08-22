@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\T.png" />
+    <None Remove="Assets\total.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\Model\" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <SplashScreen Include="Assets\T.png" />
+    <SplashScreen Include="Assets\total.png" />
   </ItemGroup>
 
 </Project>

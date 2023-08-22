@@ -19,33 +19,36 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="170" />
             <ColumnDefinition />
             <ColumnDefinition Width="200" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel
-            Grid.Column="1"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Background="#38ada9">
-
-            <DockPanel>
-                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
-                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
-            </DockPanel>
-
-            <DockPanel>
-                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
-                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
-            </DockPanel>
-
-        </StackPanel>
-
         <Frame
-            x:Name="Frame"
+            x:Name="Frame12"
             Grid.Column="1"
-            Grid.ColumnSpan="2" />
+            Grid.ColumnSpan="2"
+            Visibility="Visible" />
+
+        <ToolBar
+            x:Name="toolBar"
+            Grid.Column="0"
+            HorizontalContentAlignment="Stretch"
+            VerticalContentAlignment="Stretch"
+            Background="#FF38ADA9"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                <Button
+                    Click="Button_Click"
+                    Content="Краски"
+                    Style="{StaticResource HamburgerStyle}" />
+                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
+
+            </StackPanel>
+        </ToolBar>
+
 
     </Grid>
 </Window>

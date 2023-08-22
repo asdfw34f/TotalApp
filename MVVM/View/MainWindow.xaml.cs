@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace TotalApp.MVVM.View
 {
@@ -10,6 +11,11 @@ namespace TotalApp.MVVM.View
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame12.NavigationService.Navigate(new Uri("./MVVM/View/DataViewPage.xaml", UriKind.Relative));
         }
     }
 }
