@@ -19,7 +19,11 @@ namespace TotalApp.Infrastructure.Commands
         private readonly string path = @".\Data\st.json";
 
         public ICommand GetRootCommand { get; }
-        private bool CanGetRootCommand(object p) => true;
+        private bool CanGetRootCommand(object p)
+        {
+            return true;
+        }
+
         private void OnGetRootCommand(object p)
         {
             string MyStream = File.ReadAllText(path);
@@ -30,7 +34,7 @@ namespace TotalApp.Infrastructure.Commands
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _ = MessageBox.Show(ex.Message);
             }
         }
     }

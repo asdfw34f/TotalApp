@@ -1,15 +1,13 @@
-﻿using System.Text.Json.Serialization;
-
-namespace TotalApp.MVVM.Model
+﻿namespace TotalApp.MVVM.Model
 {
     public class RootModel
     {
-        public string ID { get; set; }
+        public required string ID { get; set; }
 
-        public string Owner { get; set; }
+        public required string Owner { get; set; }
 
-        public string Remain { get; set; }
+        public required string Remain { get; set; }
 
-        public string Name { get; set; }
+        public required string Name { get; set; }
     }
 }

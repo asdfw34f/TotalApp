@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using TotalApp.Infrastructure.Commands;
-using TotalApp.MVVM.Model;
 
 namespace TotalApp.MVVM.View
 {
@@ -11,7 +9,7 @@ namespace TotalApp.MVVM.View
     /// </summary>
     public partial class DataViewPage : Page
     {
-        DataCommand command;
+        private readonly DataCommand command;
         public DataViewPage()
         {
             InitializeComponent();
