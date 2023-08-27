@@ -4,51 +4,115 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TotalApp"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:st="clr-namespace:TotalApp.Resource.Dict"
-    Title="TotalMenu"
-    Width="800"
-    Height="450"
-    Background="#079992"
-    WindowState="Maximized"
-    mc:Ignorable="d">
+    Width="1300"
+    AllowsTransparency="True"
+    Background="{x:Null}"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None">
 
     <Window.Resources>
         <ResourceDictionary Source="/Resource/Dict.xaml" />
     </Window.Resources>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="170" />
-            <ColumnDefinition />
-            <ColumnDefinition Width="200" />
-        </Grid.ColumnDefinitions>
-
-        <Frame
-            x:Name="Frame12"
-            Grid.Column="1"
-            Grid.ColumnSpan="2"
-            Visibility="Visible" />
-
-        <ToolBar
-            x:Name="toolBar"
-            Grid.Column="0"
-            HorizontalContentAlignment="Stretch"
-            VerticalContentAlignment="Stretch"
-            Background="#FF38ADA9"
-            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-            ScrollViewer.VerticalScrollBarVisibility="Disabled">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
-                <Button
-                    Click="Button_Click"
-                    Content="Краски"
-                    Style="{StaticResource HamburgerStyle}" />
-                <Button Content="Краски" Style="{StaticResource HamburgerStyle}" />
-
-            </StackPanel>
-        </ToolBar>
-
-
+    <Grid Style="{DynamicResource MaterialDesignGrid}">
+        <materialDesign:Card Margin="10" UniformCornerRadius="15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="15*" />
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="materialDesign:PackIcon">
+                        <Setter Property="Width" Value="30" />
+                        <Setter Property="Height" Value="30" />
+                    </Style>
+                </Grid.Resources>
+                <Grid Grid.Column="0">
+                    <ListView Margin="0,15">
+                        <ListViewItem Margin="0,10" HorizontalAlignment="Center">
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="Resistor" />
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem Margin="0" HorizontalAlignment="Center">
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="CircleSlice6" />
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem Margin="0,10" HorizontalAlignment="Center">
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="CalendarBlankOutline" />
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem Margin="0" HorizontalAlignment="Center">
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="EqualiserVertical" />
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem Margin="0,10" HorizontalAlignment="Center">
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="ChatOutline" />
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem Margin="0,60,0,0" HorizontalAlignment="Center">
+                            <Button
+                                x:Name="btnExit"
+                                HorizontalAlignment="Left"
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                <StackPanel Margin="-5">
+                                    <materialDesign:PackIcon Kind="ExitToApp" />
+                                </StackPanel>
+                            </Button>
+                        </ListViewItem>
+                    </ListView>
+                </Grid>
+                <Grid
+                    Name="RenderPages"
+                    Grid.Column="1"
+                    Background="#F6F5F8" />
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </Window>

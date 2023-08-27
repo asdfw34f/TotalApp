@@ -15,7 +15,7 @@ namespace TotalApp.MVVM.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _ = Frame12.NavigationService.Navigate(new Uri("./MVVM/View/DataViewPage.xaml", UriKind.Relative));
+            //_ = Frame12.NavigationService.Navigate(new Uri("./MVVM/View/DataViewPage.xaml", UriKind.Relative));
         }
     }
 }
