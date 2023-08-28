@@ -8,6 +8,5 @@
 
         public required string Remain { get; set; }
 
-        public required string Name { get; set; }
     }
 }

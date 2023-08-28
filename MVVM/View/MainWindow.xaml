@@ -10,11 +10,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:st="clr-namespace:TotalApp.Resource.Dict"
     xmlns:vm="clr-namespace:TotalApp.MVVM.ViewModel"
-    Width="1300"
     Height="800"
     AllowsTransparency="True"
     Background="{x:Null}"
-    ResizeMode="NoResize"
+    Loaded="Window_Loaded"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None">
 
@@ -43,8 +42,8 @@
                 </Grid.RowDefinitions>
                 <Grid.Resources>
                     <Style TargetType="materialDesign:PackIcon">
-                        <Setter Property="Width" Value="40" />
-                        <Setter Property="Height" Value="40" />
+                        <Setter Property="Width" Value="30" />
+                        <Setter Property="Height" Value="30" />
                     </Style>
                 </Grid.Resources>
 
@@ -64,12 +63,19 @@
                     Background="Aquamarine">
                     <ListView
                         Margin="0"
-                        VerticalAlignment="Bottom"
-                        HorizontalContentAlignment="Stretch"
-                        VerticalContentAlignment="Stretch">
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center">
 
 
-                        <ListViewItem Margin="0,10" HorizontalAlignment="Center">
+
+                        <ListViewItem
+                            Margin="0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center">
                             <Button
                                 HorizontalAlignment="Left"
                                 Background="#FF3EEDB2"
@@ -90,22 +96,69 @@
 
                             </Button>
                         </ListViewItem>
-
                         <ListViewItem
-                            Margin="0,175,0,0"
                             HorizontalAlignment="Center"
-                            VerticalAlignment="Top"
+                            VerticalAlignment="Center"
                             HorizontalContentAlignment="Center"
-                            VerticalContentAlignment="Top"
-                            ToolTip="Выход">
+                            VerticalContentAlignment="Center">
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="#FF3EEDB2"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                ToolTip="Корректоры">
+                                <Button.Content>
+                                    <StackPanel Margin="-5">
+                                        <materialDesign:PackIcon
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            HorizontalContentAlignment="Center"
+                                            VerticalContentAlignment="Center"
+                                            Kind="EyedropperVariant" />
+                                    </StackPanel>
+                                </Button.Content>
+
+                            </Button>
+                        </ListViewItem>
+                        <ListViewItem
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center">
+
+                            <Button
+                                HorizontalAlignment="Left"
+                                Background="#FF3EEDB2"
+                                BorderBrush="{x:Null}"
+                                Foreground="Black"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                ToolTip="Сохранить">
+                                <Button.Content>
+                                    <StackPanel Margin="-5">
+                                        <materialDesign:PackIcon
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            HorizontalContentAlignment="Center"
+                                            VerticalContentAlignment="Center"
+                                            Kind="ContentSaveOutline" />
+                                    </StackPanel>
+                                </Button.Content>
+
+                            </Button>
+
+                        </ListViewItem>
+                        <ListViewItem VerticalAlignment="Bottom" VerticalContentAlignment="Bottom">
                             <Button
                                 x:Name="btnExit"
+                                Margin="0,5,0,5"
                                 HorizontalAlignment="Left"
                                 Background="#FF3EEDB2"
                                 BorderBrush="{x:Null}"
                                 Command="{Binding cmd.CloseCommand}"
                                 Foreground="Black"
-                                Style="{StaticResource MaterialDesignFloatingActionButton}">
+                                Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                ToolTip="Выход">
                                 <StackPanel Margin="-5">
                                     <materialDesign:PackIcon Kind="ExitToApp" />
                                 </StackPanel>
@@ -133,17 +186,88 @@
                                         HorizontalContentAlignment="Stretch"
                                         VerticalContentAlignment="Stretch"
                                         FontSize="18">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn CanUserResize="False" Header="ID" />
-                                            <DataGridTextColumn Header="Марка" />
-                                            <DataGridTextColumn Header="Остаток" />
-                                        </DataGrid.Columns>
+                                        
                                     </DataGrid>
                                 </Page.Content>
                             </Page>
                         </Frame.Content>
                     </Frame>
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <ListView HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <ListViewItem Margin="0,5" HorizontalAlignment="Center">
+                                <Button
+                                    Width="30"
+                                    Height="30"
+                                    HorizontalAlignment="Left"
+                                    Background="Aquamarine"
+                                    BorderBrush="{x:Null}"
+                                    Foreground="Black"
+                                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    ToolTip="Краски">
+                                    <Button.Content>
+                                        <StackPanel Margin="-5">
+                                            <materialDesign:PackIcon
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Kind="plus" />
+                                        </StackPanel>
+                                    </Button.Content>
+
+                                </Button>
+                            </ListViewItem>
+                            <ListViewItem Margin="0,5" HorizontalAlignment="Center">
+                                <Button
+                                    Width="30"
+                                    Height="30"
+                                    HorizontalAlignment="Left"
+                                    Background="Aquamarine"
+                                    BorderBrush="{x:Null}"
+                                    Foreground="Black"
+                                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    ToolTip="Краски">
+                                    <Button.Content>
+                                        <StackPanel Margin="-5">
+                                            <materialDesign:PackIcon
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Kind="minus" />
+                                        </StackPanel>
+                                    </Button.Content>
+
+                                </Button>
+                            </ListViewItem>
+                            <ListViewItem Margin="0,5" HorizontalAlignment="Center">
+                                <Button
+                                    Width="30"
+                                    Height="30"
+                                    HorizontalAlignment="Left"
+                                    Background="Aquamarine"
+                                    BorderBrush="{x:Null}"
+                                    Foreground="Black"
+                                    Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                    ToolTip="Краски">
+                                    <Button.Content>
+                                        <StackPanel Margin="-5">
+                                            <materialDesign:PackIcon
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Kind="Pencil" />
+                                        </StackPanel>
+                                    </Button.Content>
+
+                                </Button>
+                            </ListViewItem>
+                        </ListView>
+
+                    </Grid>
                 </Grid>
+
             </Grid>
         </materialDesign:Card>
     </Grid>
