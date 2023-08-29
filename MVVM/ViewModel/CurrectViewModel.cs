@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using System.Windows;
 using System.Windows.Input;
 using TotalApp.Infrastructure.Commands;
 using TotalApp.MVVM.Base;
@@ -11,24 +10,13 @@ using TotalApp.MVVM.Model;
 
 namespace TotalApp.MVVM.ViewModel
 {
-    public class MainViewModel : NotifyProperty
+    public class CurrectViewModel : NotifyProperty
     {
-        private ObservableCollection<Paint> _Paints = new();
-        public ObservableCollection<Paint> Paints
+        private ObservableCollection<Currect> _Currects = new();
+        public ObservableCollection<Currect> Currects
         {
-            get => _Paints;
-            set => Set(ref _Paints, value);
-        }
-
-        public ICommand CloseCommand { get; }
-        private bool CanCloseCommand(object p)
-        {
-            return true;
-        }
-
-        private void OnCloseCommand(object p)
-        {
-            Application.Current.MainWindow.Close();
+            get => _Currects;
+            set => Set(ref _Currects, value);
         }
 
         public ICommand LoadDataCommand { get; }
@@ -40,18 +28,15 @@ namespace TotalApp.MVVM.ViewModel
         private void OnLoadDataCommand(object p)
         {
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            path += "//Data//st.json";
+            path += "//Data//cr.json";
 
             string buff = File.ReadAllText(path, Encoding.UTF8);
 
-            Paints = JsonConvert.DeserializeObject<ObservableCollection<Paint>>(buff);
+            Currects = JsonConvert.DeserializeObject<ObservableCollection<Currect>>(buff);
         }
 
-
-        public MainViewModel()
+        public CurrectViewModel()
         {
-
-            CloseCommand = new LambdaCommand(OnCloseCommand, CanCloseCommand);
             LoadDataCommand = new LambdaCommand(OnLoadDataCommand, CanLoadDataCommand);
         }
     }

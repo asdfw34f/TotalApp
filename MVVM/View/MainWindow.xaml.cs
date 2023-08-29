@@ -1,6 +1,6 @@
 ﻿using System.Windows;
-using TotalApp.Data.Types;
-using TotalApp.Infrastructure.Commands.ButtonCommand;
+using System.Windows.Controls;
+using TotalApp.MVVM.ViewModel;
 
 namespace TotalApp.MVVM.View
 {
@@ -9,37 +9,35 @@ namespace TotalApp.MVVM.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        ButtonsCmd cmd;
+        private MainViewModel vm;
+        CurrectView Currect;
         public MainWindow()
         {
             InitializeComponent();
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //_ = Frame12.NavigationService.Navigate(new Uri("./MVVM/View/DataViewPage.xaml", UriKind.Relative));
+            vm = new MainViewModel();
+            Currect = new CurrectView();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            cmd = new ButtonsCmd();
-            cmd.LoadDataCommand.Execute(this);
-            if (MyData.paints.Count > 0 )
+            vm.LoadDataCommand.Execute(null);
+            TablePaint.ItemsSource = vm.Paints;
+            if (vm.Paints.Count > 0)
             {
-                TablePaint.ItemsSource = MyData.paints;
                 TablePaint.Columns[0].Header = "ID";
                 TablePaint.Columns[1].Header = "Марка";
                 TablePaint.Columns[2].Header = "Остаток";
-                /*
-                 * <DataGrid.Columns>
-                                            <DataGridTextColumn CanUserResize="False" Header="ID" />
-                                            <DataGridTextColumn Header="Марка" />
-                                            <DataGridTextColumn Header="Остаток" />
-                                        </DataGrid.Columns>
-                 * 
-                 * */
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            myFrame.NavigationService.Content = Currect;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            myFrame.NavigationService.Content = Paints;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TotalApp.MVVM.Model
 {
-    public class RootModel
+    public class Paint
     {
         public required string ID { get; set; }
 

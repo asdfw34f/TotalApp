@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="TotalApp.MVVM.View.CurrectView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TotalApp.MVVM.View"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="CurrectView"
+    Width="500"
+    Height="800"
+    Loaded="Page_Loaded"
+    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+    ShowsNavigationUI="False"
+    mc:Ignorable="d">
+
+    <Grid>
+        <materialDesign:Card>
+            <Grid>
+                <DataGrid
+                    x:Name="TableCurrects"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    BorderBrush="{x:Null}"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    CanUserReorderColumns="False"
+                    CanUserResizeColumns="False"
+                    CanUserResizeRows="False"
+                    FontSize="18"
+                    IsReadOnly="True" />
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Page>
